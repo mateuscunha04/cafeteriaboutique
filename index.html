@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="h7ttps://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>Boutique do café</title>
+    <style>
+        :root{
+            --bgcolor: rgb(232,231,227);
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            transition: 0.2s linear;
+            font-family: "Josefin Sans", sans-serif;
+        }
+
+        body{
+            background-color: var(--bgcolor);
+        }
+
+        #header{
+            position: static;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+        }
+
+        #header section{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 1.5rem 0;
+        }
+
+        section{
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar a{
+            font-size: 22px;
+            margin: 0 1.5rem;
+            color: black;
+        }
+
+        .navbar a:hover{
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .about{
+            display: flex;
+            
+        }
+
+        #about-section #about{
+            display: flex;
+        }
+
+        #about-section #about{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        #about h1 {
+            font-size: 40px;
+        }
+
+        #about p{
+            font-size: 35px;
+            text-align: center;
+            line-height: 3.5rem;
+        }
+
+        section .paises{
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            margin: 3rem 0;
+        }
+
+        .paises img{
+            height: 5.5rem;
+            width: auto;
+        }
+
+        .icones img, .paises img{
+            cursor: pointer;
+        }
+
+        .icones img:hover{
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <section>
+            <a href="#logomain" class="logo">
+                <img src="logo1.png" alt="Logo Boutique do Café">
+            </a>
+    
+            <nav class="navbar">
+                <a href="#especiais">Especiais</a>
+                <a href="#importados">Importados</a>
+                <a href="#exoticos">Exóticos</a>
+            </nav>
+    
+            <div class="icones">
+                <img width="48" height="48" src="https://img.icons8.com/material-rounded/48/shopping-cart.png" alt="shopping-cart"/>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section id="about-section">
+            <section id="about">
+                <h1 class="title">Sobre nós</h1>
+                <p id="description01">Uma xícara de café quentinha te espera, antes mesmo do raiar do dia e do seu acordar. Ela te espera na sua mesa, com um aroma que se espalha pela casa e com um gosto confortável, devidamente amargo e revigorante para começar a sua manhã. A Boutique do Café te oferece tudo isso, pois fornecemos os <b>melhores grãos</b> dos <b>maiores produtores de café do MUNDO!</b></p>
+            </section>
+            <div class="paises">
+                <img width="96" height="96" src="https://img.icons8.com/color/96/brazil.png" alt="brazil"/>
+                <img width="96" height="96" src="https://img.icons8.com/color/96/colombia.png" alt="colombia"/>
+                <img width="96" height="96" src="https://img.icons8.com/color/96/ethiopia.png" alt="ethiopia"/>
+            </div>
+        </section>
+        <section class="menu" id="#especiais">
+            <div class="box-container">
+                <div class="box">
+                    <img src="./baggiotrufa.webp" alt="pacote de café">
+                    <h3>Café Baggio com aroma de trufa</h3>
+                    <div class="price">R$ 17,99 <span>R$ 20,99</span></div>
+                    <a href="" class="btn">Adicionar ao carrinho</a>
+                </div>
+                <div class="box">
+                    <img src="./baggiotrufa.webp" alt="pacote de café">
+                    <h3>Café Baggio com aroma de trufa</h3>
+                    <div class="price">R$ 17,99 <span>R$ 20,99</span></div>
+                    <a href="" class="btn">Adicionar ao carrinho</a>
+                </div>
+                <div class="box">
+                    <img src="./baggiotrufa.webp" alt="pacote de café">
+                    <h3>Café Baggio com aroma de trufa</h3>
+                    <div class="price">R$ 17,99 <span>R$ 20,99</span></div>
+                    <a href="" class="btn">Adicionar ao carrinho</a>
+                </div>
+            </div>
+        </section>
+            
+        <section class="menu" id="#importados">
+            <div class="box-container">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </section>
+
+        <section class="menu" id="#exoticos">
+            <div class="box-container">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </section>
+        <section class="review" id="review">
+            <div class="box-container box">
+
+            </div>
+            <div class="box-container box">
+
+            </div>
+            <div class="box-container box">
+
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
