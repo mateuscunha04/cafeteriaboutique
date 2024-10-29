@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="h7ttps://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>Boutique do café</title>
+    <style>
+        :root{
+            --bgcolor: rgb(232,231,227);
+            --bgcolor2: rgb(242, 241, 237);
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            transition: 0.2s linear;
+            font-family: "Josefin Sans", sans-serif;
+        }
+
+        body{
+            background-color: var(--bgcolor);
+        }
+
+        #header{
+            position: static;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+        }
+
+        #header section{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 1.5rem 0;
+        }
+
+        section{
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar a{
+            font-size: 22px;
+            margin: 0 1.5rem;
+            color: black;
+        }
+
+        .navbar a:hover{
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        #about-section #about, .about{
+            display: flex;
+        }
+
+        #about-section #about{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        #about h1 {
+            font-size: 40px;
+        }
+
+        #about p{
+            font-size: 35px;
+            text-align: center;
+            line-height: 3.5rem;
+        }
+
+        section .paises{
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            margin: 3rem 0;
+        }
+
+        .paises img{
+            height: 5.5rem;
+            width: auto;
+        }
+
+        .icones img, .paises img{
+            cursor: pointer;
+        }
+
+        .icones img:hover{
+            height: 50px;
+            width: 50px;
+        }
+
+        .box-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            gap: 1.5rem;
+        }
+
+        .box{
+            display: grid;
+            gap: 20px;
+            border: 2px solid black;
+            background-color: var(--bgcolor2);
+        }
+
+        .box:hover{
+            box-shadow: 2px 2px 6px grey,  2px 2px 6px grey;
+        }
+
+        .menu .box-container .box{
+            text-align: center;
+            padding: 2rem 1rem;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+
+        .box-container{
+            margin: 4.5rem 0;
+        }
+
+        .box img{
+            height: 12em;
+            width: auto;
+            justify-self: center;
+        }
+
+        .menu h1{
+            text-align: center;
+        }
+
+        .btn{
+            background-color: black;
+            color: white;
+            border-radius: 8px;
+            padding: 17px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            justify-self: center;
+        }
+
+        .btn a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn img{
+            height: 24px;
+            width: auto;
+        }
+
+        .btn:hover, .box:hover{
+            box-shadow: 2px 2px 7px grey,  2px 2px 7px grey;
+        }
+
+        #review .box:hover{
+            box-shadow: 2px 2px 11px grey,  2px 2px 11px grey;
+        }
+
+        .stars{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stars img{
+            margin: 0.5rem 0;
+            width: 25px;
+            height: 25px;
+        }
+
+        .address{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .address div, iframe{
+            border: 3.5px black solid;
+            border-radius: 10px;
+        }
+
+        footer{
+            text-align: center;
+            padding: 1.2rem 0;
+            margin-top: 2.2rem;
+            bottom: 100%;
+        }
+
+        footer img{
+            margin: 0.5rem;
+            cursor: pointer;
+        }
+
+        footer img:hover{
+            height: 51px;
+            width: 51px;
+        }
+
+        .price{
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .price span{
+            font-size: 17px;
+            font-weight: 300;
+            text-decoration: line-through;
+        }
+
+        .menu h1{
+            font-size: 33px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <section>
+            <a href="#logomain" class="logo">
+                <img src="imagens/logo1.png" alt="Logo Boutique do Café">
+            </a>
+    
+            <nav class="navbar">
+                <a href="#especiais">Especiais</a>
+                <a href="#importados">Importados</a>
+                <a href="#produtos">Produtos</a>
+            </nav>
+    
+            <div class="icones">
+                <img width="48" height="48" src="https://img.icons8.com/material-rounded/48/shopping-cart.png" alt="shopping-cart"/>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section id="about-section">
+            <section id="about">
+                <h1 class="title">Sobre nós</h1>
+                <p id="description01">Uma xícara de café quentinha te espera, antes mesmo do raiar do dia e do seu acordar. Ela te espera na sua mesa, com um aroma que se espalha pela casa e com um gosto confortável, devidamente amargo e revigorante para começar a sua manhã. A Boutique do Café te oferece tudo isso, pois fornecemos os <b>melhores grãos</b> dos <b>maiores produtores de café do MUNDO!</b></p>
+            </section>
+            <div class="paises">
+                <img width="96" height="96" src="https://img.icons8.com/color/96/brazil.png" alt="brazil"/>
+                <img width="96" height="96" src="https://img.icons8.com/color/96/colombia.png" alt="colombia"/>
+                <img width="96" height="96" src="https://img.icons8.com/color/96/ethiopia.png" alt="ethiopia"/>
+            </div>
+        </section>
+        <section class="menu" id="#especiais">
+            <h1>Especiais</h1>
+            <div class="box-container">
+                <div class="box">
+                    <img src="imagens/especiais/cafeitaliano.jpg" alt="pacote de café">
+                    <h3>Café Santa Mônica</h3>
+                    <div class="stars">
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star-half-empty.png" alt="star-half-empty"/>
+                    </div>
+                    <div class="price">R$ 22,90 <span>R$ 25,90</span></div>
+                    <div class="btn">
+                        <a href="">Adicionar ao carrinho</a>
+                        <img width="24" height="24" src="https://img.icons8.com/forma-light/24/FFFFFF/shopping-cart.png" alt="shopping-cart"/>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imagens/especiais/cafetucano.png" alt="pacote de café">
+                    <h3>Café Black Tucano</h3>
+                    <div class="stars">
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star-half-empty.png" alt="star-half-empty"/>
+                    </div>
+                    <div class="price">R$ 39,90</div>
+                    <div class="btn">
+                        <a href="">Adicionar ao carrinho</a>
+                        <img width="24" height="24" src="https://img.icons8.com/forma-light/24/FFFFFF/shopping-cart.png" alt="shopping-cart"/>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imagens/especiais/bourbonbaggio.png" alt="pacote de café">
+                    <h3>Café Baggio Bourbon</h3>
+                    <div class="stars">
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star-half-empty.png" alt="star-half-empty"/>
+                    </div>
+                    <div class="price">R$ 23,90 <span>R$ 25,90</span></div>
+                    <div class="btn">
+                        <a href="">Adicionar ao carrinho</a>
+                        <img width="24" height="24" src="https://img.icons8.com/forma-light/24/FFFFFF/shopping-cart.png" alt="shopping-cart"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+            
+        <section class="menu" id="#importados">
+            <h1>Importados</h1>
+            <div class="box-container">
+                <div class="box">
+                    <img src="imagens/importados/caveiracafe.png" alt="pacote de café">
+                    <h3>High Voltage Bones Coffee</h3>
+                    <div class="stars">
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star-half-empty.png" alt="star-half-empty"/>
+                    </div>
+                    <div class="price">R$ 49,90</div>
+                    <div class="btn">
+                        <a href="">Adicionar ao carrinho</a>
+                        <img width="24" height="24" src="https://img.icons8.com/forma-light/24/FFFFFF/shopping-cart.png" alt="shopping-cart"/>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imagens/importados/THcafe.jpg" alt="pacote de café">
+                    <h3>Café moído Tim Hortons</h3>
+                    <div class="stars">
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star-half-empty.png" alt="star-half-empty"/>
+                    </div>
+                    <div class="price">R$ 36,90 <span>R$ 38,90</span></div>
+                    <div class="btn">
+                        <a href="">Adicionar ao carrinho</a>
+                        <img width="24" height="24" src="https://img.icons8.com/forma-light/24/FFFFFF/shopping-cart.png" alt="shopping-cart"/>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imagens/importados/badcafe.png" alt="pacote de café">
+                    <h3>Bad Coffee</h3>
+                    <div class="stars">
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star-half-empty.png" alt="star-half-empty"/>
+                    </div>
+                    <div class="price">R$ 29,90 <span>R$ 30,90</span></div>
+                    <div class="btn">
+                        <a href="">Adicionar ao carrinho</a>
+                        <img width="24" height="24" src="https://img.icons8.com/forma-light/24/FFFFFF/shopping-cart.png" alt="shopping-cart"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu" id="#produtos">
+            <h1>Produtos</h1>
+            <div class="box-container">
+                <div class="box">
+                    <img src="imagens/produtos/italiana.png" alt="pacote de café">
+                    <h3>Cafeteria italiana</h3>
+                    <div class="stars">
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star-half-empty.png" alt="star-half-empty"/>
+                    </div>
+                    <div class="price">R$ 59,90 <span>R$ 62,90</span></div>
+                    <div class="btn">
+                        <a href="">Adicionar ao carrinho</a>
+                        <img width="24" height="24" src="https://img.icons8.com/forma-light/24/FFFFFF/shopping-cart.png" alt="shopping-cart"/>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imagens/produtos/copo bc.png" alt="pacote de café">
+                    <h3>Copo exclusivo</h3>
+                    <div class="stars">
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star-half-empty.png" alt="star-half-empty"/>
+                    </div>
+                    <div class="price">R$ 19,99</div>
+                    <div class="btn">
+                        <a href="">Adicionar ao carrinho</a>
+                        <img width="24" height="24" src="https://img.icons8.com/forma-light/24/FFFFFF/shopping-cart.png" alt="shopping-cart"/>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="imagens/produtos/francesa.png" alt="pacote de café">
+                    <h3>Prensa francesa</h3>
+                    <div class="stars">
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star.png" alt="star"/>
+                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-filled/28/star-half-empty.png" alt="star-half-empty"/>
+                    </div>
+                    <div class="price">R$ 55,90 <span>R$ 69,90</span></div>
+                    <div class="btn">
+                        <a href="">Adicionar ao carrinho</a>
+                        <img width="24" height="24" src="https://img.icons8.com/forma-light/24/FFFFFF/shopping-cart.png" alt="shopping-cart"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="menu" id="review">
+            <h1>Nossos convênios</h1>
+            <div class="box-container">
+                <div class="box">
+                    <img src="imagens/logos/logo-cafe-3-coracoes.webp" alt="">
+                    <h3>Três Corações</h3>
+                    <p>Primeira fornecedora oficial desde 2015! Traz consigo a tradicão do café e os sabores de Minas Gerais.</p>
+                </div>
+                <div class="box">
+                    <img src="imagens/logos/cafeorfeu-logo.png" alt="">
+                    <h3>Orfeu</h3>
+                    <p>Nova parceria de cafés especiais e bourbons, reconhecida pelo requinte e pela exclusividade de seus grãos.</p>
+                </div>
+            </div>
+        </section>
+        <section class="address" id="address">
+            <h2 class="tittle">Nossa sede</h2>
+            <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.699568168542!2d-49.05089092378364!3d-25.481705477528877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcf3c083db163d%3A0x3fa7788d885ebc64!2sCaminho%20Trentino%20dos%20Mananciais!5e0!3m2!1spt-BR!2sbr!4v1729856876762!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </section>
+    </main>
+    <footer>
+        <section id="footer">
+            <img width="48" height="48" src="https://img.icons8.com/material-outlined/48/instagram-new--v1.png" alt="instagram-new--v1"/>
+            <img width="48" height="48" src="https://img.icons8.com/material-rounded/48/facebook-new.png" alt="facebook-new"/>
+            <img width="48" height="48" src="https://img.icons8.com/material-rounded/48/youtube-play.png" alt="youtube-play"/>
+            <img width="48" height="48" src="https://img.icons8.com/material-outlined/48/whatsapp--v1.png" alt="whatsapp--v1"/>
+        </section>
+    </footer>
+</body>
+</html>
